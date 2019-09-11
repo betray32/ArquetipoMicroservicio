@@ -79,6 +79,12 @@
 			<artifactId>commons-codec</artifactId>
 		</dependency>
 
+		<!-- Formateador para JSON -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
