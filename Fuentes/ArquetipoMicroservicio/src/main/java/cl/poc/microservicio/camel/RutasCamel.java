@@ -19,6 +19,11 @@ import cl.poc.microservicio.bean.Employee;
 public class RutasCamel extends RouteBuilder {
 
 	/**
+	 * Endpoint para el servicio GET
+	 */
+	private static final String ENDPOINT_GET = "http://localhost:8080/employee?id=5";
+
+	/**
 	 * Se indican todas las rutinas camel que deseamos
 	 */
 	@Override
@@ -35,7 +40,7 @@ public class RutasCamel extends RouteBuilder {
 				/*
 				 * Endpoint de destino a consultar
 				 */
-				.to("http://localhost:8080/employee?id=5")
+				.to(ENDPOINT_GET)
 				/*
 				 * Mediante esto se expresa que se desea obtener la salida como un objeto
 				 * complejo deseado como salida
