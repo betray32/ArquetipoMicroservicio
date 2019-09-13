@@ -3,7 +3,10 @@ package cl.poc.microservicio.rest;
 import org.apache.camel.ProducerTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import cl.poc.microservicio.bean.Employee;
 
 /**
  * CamelRestExposer
@@ -21,11 +24,12 @@ public class CamelRestExposer {
 	private ProducerTemplate producerTemplate;
 
 	/**
-	 * startCamel
+	 * camelGetExample
 	 */
 	@GetMapping(value = "Camel")
-	public void startCamel() {
-		producerTemplate.sendBody("direct:endpointCamel", "Invocando desde Spring Boot Rest > CAMEL");
+	@ResponseBody
+	public Employee camelGetExample() {
+		return producerTemplate.requestBody("direct:consultarGET", null, Employee.class); 
 	}
 
 }
