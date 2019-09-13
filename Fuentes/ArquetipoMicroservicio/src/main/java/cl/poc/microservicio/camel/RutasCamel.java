@@ -1,4 +1,4 @@
-package cl.poc.microservicio.rest;
+package cl.poc.microservicio.camel;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
