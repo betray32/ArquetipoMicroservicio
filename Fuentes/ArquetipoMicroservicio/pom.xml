@@ -53,6 +53,23 @@
 			<version>${version.camel}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-servlet-starter</artifactId>
+			<version>${version.camel}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jackson-starter</artifactId>
+			<version>${version.camel}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-http</artifactId>
+			<version>${version.camel}</version>
+		</dependency>
+
 		<!-- Oracle - Driver Nativo -->
 		<dependency>
 			<groupId>com.oracle.jdbc</groupId>
