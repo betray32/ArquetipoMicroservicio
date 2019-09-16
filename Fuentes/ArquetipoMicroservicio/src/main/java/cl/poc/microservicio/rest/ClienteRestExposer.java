@@ -18,7 +18,7 @@ import cl.poc.microservicio.bean.ClienteInputPost;
 import cl.poc.microservicio.delegate.ClienteDelegate;
 
 /**
- * Ejemplo Expositor de cliente Rest
+ * Clase que contiene ejemplos de como exponer endpoints rest
  * 
  * @author ccontrerasc
  *
@@ -61,7 +61,7 @@ public class ClienteRestExposer {
 	/**
 	 * Ejemplo de endpoint con metodo GET, con parametro por path
 	 * 
-	 * Se consume: curl http://localhost:8080/ArquetipoMicroservicio/ConsultarCliente/51266633
+	 * Se consume: curl http://localhost:8081/ArquetipoMicroservicio/ConsultarCliente/51266633
 	 * 
 	 * @param rut
 	 * @return
@@ -86,7 +86,7 @@ public class ClienteRestExposer {
 	/**
 	 * Ejemplo de endpoint con metodo GET con parametro por path y por request
 	 * 
-	 * Se consume: curl http://localhost:8080/ArquetipoMicroservicio/ConsultarClienteParam/51266633?nombre=EJEMPLO_NOMBRE
+	 * Se consume: curl http://localhost:8081/ArquetipoMicroservicio/ConsultarClienteParam/51266633?nombre=EJEMPLO_NOMBRE
 	 * 
 	 * @param rut
 	 * @return

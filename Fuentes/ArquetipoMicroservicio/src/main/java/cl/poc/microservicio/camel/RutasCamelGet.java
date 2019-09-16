@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 import cl.poc.microservicio.bean.Employee;
 
 /**
- * Configuracion de las rutas de camel
+ * Configuracion de las rutas de camel - GET
  * 
  * @author ccontrerasc
  *
  */
 @Component
-public class RutasCamel extends RouteBuilder {
+public class RutasCamelGet extends RouteBuilder {
 
 	/**
 	 * Endpoint para el servicio GET
@@ -30,25 +30,25 @@ public class RutasCamel extends RouteBuilder {
 	public void configure() throws Exception {
 
 		/*
-		 * Ejemplo de invocacion hacia servicio que posee rutinas
+		 * Ejemplo de invocacion hacia servicio GET con rutinas tipicas de camel
 		 */
 		from("direct:consultarGET")
 				/*
 				 * Se indica las cabeceras y tipos a consultar
 				 */
 				.setHeader(Exchange.HTTP_METHOD, simple(HttpMethod.GET.name()))
+				.setHeader(Exchange.CONTENT_TYPE, constant("application/json"))
 				/*
 				 * Endpoint de destino a consultar
 				 */
 				.to(ENDPOINT_GET)
 				/*
-				 * Mediante esto se expresa que se desea obtener la salida como un objeto
-				 * complejo deseado como salida
+				 * Se especifica que se desea desempaquetar el mensaje (la salida) desde el
+				 * servicio invocado indicandole el tipo de bean correspondiente
 				 */
 				.unmarshal(new JacksonDataFormat(Employee.class))
 				/*
-				 * Procesador, en este caso se toma la salida del endpoint invocado y se setea
-				 * como salida de la rutina
+				 * Se toma el bean de salida de la rutina y se setea en la salida de esta rutina
 				 */
 				.process(new Processor() {
 					@Override
