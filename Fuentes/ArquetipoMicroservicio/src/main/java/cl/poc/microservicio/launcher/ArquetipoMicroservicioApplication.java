@@ -22,7 +22,8 @@ import org.springframework.context.annotation.ComponentScan;
 		"cl.poc.microservicio.helper",
 		"cl.poc.microservicio.launcher",
 		"cl.poc.microservicio.rest",
-		"cl.poc.microservicio.delegate"
+		"cl.poc.microservicio.delegate",
+		"cl.poc.microservicio.camel"
 	}
 )
 public class ArquetipoMicroservicioApplication {
